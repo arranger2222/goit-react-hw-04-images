@@ -88,7 +88,6 @@ export class App extends Component {
   };
 
   toggleModal = largeImageURL => {
-    console.log('click on image');
     this.setState(({ showModal }) => ({
       showModal: !showModal,
     }));
@@ -115,7 +114,6 @@ export class App extends Component {
 
         {showModal && (
           <Modal onClose={this.toggleModal}>
-            {/* <ModalImg src={largeImageURL} alt={tags} /> */}
             <img src={largeImageURL} alt={tags} />
           </Modal>
         )}
