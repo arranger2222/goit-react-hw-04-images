@@ -7,6 +7,7 @@ import { ImageGallery } from 'components/ImageGallery/ImageGallery';
 import { Modal } from 'components/Modal/Modal';
 import { Container } from './App.styled';
 import { Button } from 'components/Button/Button';
+import { Loader } from 'components/Loader/Loader';
 
 export class App extends Component {
   state = {
@@ -16,7 +17,7 @@ export class App extends Component {
     isLoading: false,
     error: null,
     total: 0,
-    showModal: true,
+    showModal: false,
     largeImageURL: null,
   };
 
@@ -102,7 +103,8 @@ export class App extends Component {
     const loadMoreBtn = loadImages && !isLoading && !isLastPage;
     return (
       <Container>
-        {this.state.isLoading && <div>LOADING</div>}
+        {isLoading && <Loader />}
+        {/* {this.state.isLoading && <div>LOADING</div>} */}
         <Searchbar onSubmit={this.onSearch} />
         {error && toast.error(error.message)}
         {loadImages && (
@@ -113,6 +115,7 @@ export class App extends Component {
 
         {showModal && (
           <Modal onClose={this.toggleModal}>
+            {/* <ModalImg src={largeImageURL} alt={tags} /> */}
             <img src={largeImageURL} alt={tags} />
           </Modal>
         )}
