@@ -22,20 +22,3 @@ ImageGalleryItem.propTypes = {
   tags: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
-
-// export const Gallery = ({ images, onClick }) => {
-//   return (
-//     <ul style={{ listStyleType: 'none' }}>
-//       {images.map(image => (
-//         <li
-//           key={image.id}
-//           onClick={() => {
-//             onClick(image.largeImageURL);
-//           }}
-//         >
-//           <img src={image.webformatURL} alt={image.tags} width="100px" />
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// };
